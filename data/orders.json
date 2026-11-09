@@ -1,0 +1,1800 @@
+[
+  {
+    "order_id": 1000,
+    "customer": "alex",
+    "product": "Война и мир",
+    "amount": 20.77,
+    "currency": "USD",
+    "order_date": "2026-10-18",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1001,
+    "customer": "maria",
+    "product": "Война и мир",
+    "amount": 19.93,
+    "currency": "USD",
+    "order_date": "2026-09-14",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1002,
+    "customer": "elena",
+    "product": "Преступление и наказание",
+    "amount": 11.75,
+    "currency": "USD",
+    "order_date": "2026-10-08",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1003,
+    "customer": "anna",
+    "product": "Python для всех",
+    "amount": 32.7,
+    "currency": "USD",
+    "order_date": "2026-09-18",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1004,
+    "customer": "maria",
+    "product": "1984",
+    "amount": 11.75,
+    "currency": "EUR",
+    "order_date": "2026-09-25",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1005,
+    "customer": "elena",
+    "product": "Война и мир",
+    "amount": 21.35,
+    "currency": "GBP",
+    "order_date": "2026-10-05",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1006,
+    "customer": "kate",
+    "product": "Война и мир",
+    "amount": 1537.86,
+    "currency": "RUB",
+    "order_date": "2026-09-13",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1007,
+    "customer": "olga",
+    "product": "Война и мир",
+    "amount": 20.32,
+    "currency": "USD",
+    "order_date": "2026-10-26",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1008,
+    "customer": "anna",
+    "product": "Война и мир",
+    "amount": 1637.35,
+    "currency": "RUB",
+    "order_date": "2026-09-23",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1009,
+    "customer": "alex",
+    "product": "Преступление и наказание",
+    "amount": 12.22,
+    "currency": "GBP",
+    "order_date": "2026-10-05",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1010,
+    "customer": "anna",
+    "product": "Преступление и наказание",
+    "amount": null,
+    "currency": "EUR",
+    "order_date": "2026-10-24",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1011,
+    "customer": "dmitry",
+    "product": "Мастер и Маргарита",
+    "amount": 13.76,
+    "currency": "EUR",
+    "order_date": "2026-09-05",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1012,
+    "customer": "elena",
+    "product": "Преступление и наказание",
+    "amount": 10.6,
+    "currency": "GBP",
+    "order_date": "2026-09-10",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1013,
+    "customer": "kate",
+    "product": "Python для всех",
+    "amount": 28.25,
+    "currency": "EUR",
+    "order_date": "2026-09-26",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1014,
+    "customer": "elena",
+    "product": "Чистый код",
+    "amount": 41.97,
+    "currency": "EUR",
+    "order_date": "2026-09-06",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1015,
+    "customer": "kate",
+    "product": "Мастер и Маргарита",
+    "amount": 11.35,
+    "currency": "USD",
+    "order_date": "2026-09-05",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1016,
+    "customer": "dmitry",
+    "product": "Dune",
+    "amount": 1407.79,
+    "currency": "RUB",
+    "order_date": "2026-10-06",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1017,
+    "customer": "maria",
+    "product": "Мастер и Маргарита",
+    "amount": 13.25,
+    "currency": "USD",
+    "order_date": "2026-09-19",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1018,
+    "customer": "john",
+    "product": "Dune",
+    "amount": 15.02,
+    "currency": "EUR",
+    "order_date": "2026-10-29",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1019,
+    "customer": "anna",
+    "product": "Война и мир",
+    "amount": 21.32,
+    "currency": "GBP",
+    "order_date": "2026-10-19",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1020,
+    "customer": "maria",
+    "product": "1984",
+    "amount": 10.69,
+    "currency": "USD",
+    "order_date": "2026-10-30",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1021,
+    "customer": "maria",
+    "product": "Чистый код",
+    "amount": 34.01,
+    "currency": "GBP",
+    "order_date": "2026-09-06",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1022,
+    "customer": "elena",
+    "product": "Sapiens",
+    "amount": 19.09,
+    "currency": "USD",
+    "order_date": "2026-10-31",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1023,
+    "customer": "john",
+    "product": "Игра престолов",
+    "amount": 20.57,
+    "currency": "EUR",
+    "order_date": "2026-10-19",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1024,
+    "customer": "john",
+    "product": "Преступление и наказание",
+    "amount": 11.22,
+    "currency": "GBP",
+    "order_date": "2026-09-29",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1025,
+    "customer": "kate",
+    "product": "Война и мир",
+    "amount": 17.9,
+    "currency": "EUR",
+    "order_date": "2026-10-06",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1026,
+    "customer": "maria",
+    "product": "Преступление и наказание",
+    "amount": 9.92,
+    "currency": "EUR",
+    "order_date": "2026-10-28",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1027,
+    "customer": "elena",
+    "product": "Мастер и Маргарита",
+    "amount": 11.06,
+    "currency": "GBP",
+    "order_date": "2026-09-14",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1028,
+    "customer": "elena",
+    "product": "Игра престолов",
+    "amount": 23.46,
+    "currency": "EUR",
+    "order_date": "2026-10-22",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1029,
+    "customer": "sergey",
+    "product": "Dune",
+    "amount": 13.46,
+    "currency": "EUR",
+    "order_date": "2026-09-27",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1030,
+    "customer": "sergey",
+    "product": "Sapiens",
+    "amount": 17.63,
+    "currency": "USD",
+    "order_date": "2026-10-17",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1031,
+    "customer": "elena",
+    "product": "Чистый код",
+    "amount": 34.11,
+    "currency": "USD",
+    "order_date": "2026-09-09",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1032,
+    "customer": "elena",
+    "product": "Dune",
+    "amount": 14.26,
+    "currency": "EUR",
+    "order_date": "2026-10-22",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1033,
+    "customer": "olga",
+    "product": "Игра престолов",
+    "amount": 19.22,
+    "currency": "USD",
+    "order_date": "2026-09-11",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1034,
+    "customer": "alex",
+    "product": "Dune",
+    "amount": 1362.95,
+    "currency": "RUB",
+    "order_date": "2026-09-25",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1035,
+    "customer": "sergey",
+    "product": "Мастер и Маргарита",
+    "amount": 1057.93,
+    "currency": "RUB",
+    "order_date": "2026-10-15",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1036,
+    "customer": "ivan",
+    "product": "Игра престолов",
+    "amount": 1788.77,
+    "currency": "RUB",
+    "order_date": "2026-10-08",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1037,
+    "customer": "kate",
+    "product": "Игра престолов",
+    "amount": 23.61,
+    "currency": "USD",
+    "order_date": "2026-10-01",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1038,
+    "customer": "maria",
+    "product": "Игра престолов",
+    "amount": 19.26,
+    "currency": "EUR",
+    "order_date": "2026-10-09",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1039,
+    "customer": "kate",
+    "product": "Война и мир",
+    "amount": 18.89,
+    "currency": "EUR",
+    "order_date": "2026-09-03",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1040,
+    "customer": "olga",
+    "product": "Маленький принц",
+    "amount": 7.69,
+    "currency": "USD",
+    "order_date": "2026-10-13",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1041,
+    "customer": "elena",
+    "product": "Чистый код",
+    "amount": 34.29,
+    "currency": "EUR",
+    "order_date": "2026-09-21",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1042,
+    "customer": "john",
+    "product": "Война и мир",
+    "amount": 19.19,
+    "currency": "USD",
+    "order_date": "2026-09-14",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1043,
+    "customer": "olga",
+    "product": "Игра престолов",
+    "amount": 19.73,
+    "currency": "GBP",
+    "order_date": "2026-09-24",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1044,
+    "customer": "john",
+    "product": "Python для всех",
+    "amount": 29.91,
+    "currency": "EUR",
+    "order_date": "2026-09-20",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1045,
+    "customer": "john",
+    "product": "Война и мир",
+    "amount": 18.12,
+    "currency": "EUR",
+    "order_date": "2026-09-10",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1046,
+    "customer": "dmitry",
+    "product": "Python для всех",
+    "amount": 31.36,
+    "currency": "GBP",
+    "order_date": "2026-10-03",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1047,
+    "customer": "sergey",
+    "product": "Sapiens",
+    "amount": 18.75,
+    "currency": "GBP",
+    "order_date": "2026-10-24",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1048,
+    "customer": "alex",
+    "product": "Python для всех",
+    "amount": 26.13,
+    "currency": "USD",
+    "order_date": "2026-10-18",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1049,
+    "customer": "alex",
+    "product": "Sapiens",
+    "amount": 1538.31,
+    "currency": "RUB",
+    "order_date": "2026-10-05",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1050,
+    "customer": "alex",
+    "product": "Мастер и Маргарита",
+    "amount": 12.9,
+    "currency": "GBP",
+    "order_date": "2026-09-03",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1051,
+    "customer": "olga",
+    "product": "Python для всех",
+    "amount": 33.92,
+    "currency": "GBP",
+    "order_date": "2026-10-14",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1052,
+    "customer": "alex",
+    "product": "Преступление и наказание",
+    "amount": 11.07,
+    "currency": "USD",
+    "order_date": "2026-10-30",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1053,
+    "customer": "ivan",
+    "product": "Преступление и наказание",
+    "amount": 13.12,
+    "currency": "EUR",
+    "order_date": "2026-09-12",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1054,
+    "customer": "alex",
+    "product": "Чистый код",
+    "amount": 3593.11,
+    "currency": "RUB",
+    "order_date": "2026-10-21",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1055,
+    "customer": "olga",
+    "product": "Война и мир",
+    "amount": 1934.15,
+    "currency": "XXX",
+    "order_date": "2026-10-23",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1056,
+    "customer": "ivan",
+    "product": "Sapiens",
+    "amount": 15.86,
+    "currency": "GBP",
+    "order_date": "2026-10-13",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1057,
+    "customer": "anna",
+    "product": "Преступление и наказание",
+    "amount": 988.49,
+    "currency": "RUB",
+    "order_date": "2026-10-12",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1058,
+    "customer": "maria",
+    "product": "Игра престолов",
+    "amount": 2086.29,
+    "currency": "RUB",
+    "order_date": "2026-10-27",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1059,
+    "customer": "maria",
+    "product": "Python для всех",
+    "amount": 31.15,
+    "currency": "EUR",
+    "order_date": "2026-10-09",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1060,
+    "customer": "kate",
+    "product": "Dune",
+    "amount": 16.22,
+    "currency": "GBP",
+    "order_date": "2026-10-03",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1061,
+    "customer": "ivan",
+    "product": "Война и мир",
+    "amount": 1947.8,
+    "currency": "RUB",
+    "order_date": "2026-10-16",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1062,
+    "customer": "sergey",
+    "product": "Dune",
+    "amount": 15.31,
+    "currency": "USD",
+    "order_date": "2026-09-05",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1063,
+    "customer": "dmitry",
+    "product": "Чистый код",
+    "amount": 38.47,
+    "currency": "GBP",
+    "order_date": "2026-10-03",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1064,
+    "customer": "olga",
+    "product": "Python для всех",
+    "amount": 2604.4,
+    "currency": "RUB",
+    "order_date": "2026-09-27",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1065,
+    "customer": "john",
+    "product": "Dune",
+    "amount": 15.73,
+    "currency": "EUR",
+    "order_date": "2026-10-24",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1066,
+    "customer": "kate",
+    "product": "Мастер и Маргарита",
+    "amount": 11.83,
+    "currency": "GBP",
+    "order_date": "2026-10-12",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1067,
+    "customer": "elena",
+    "product": "Чистый код",
+    "amount": 3252.49,
+    "currency": "RUB",
+    "order_date": "2026-10-21",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1068,
+    "customer": "olga",
+    "product": "1984",
+    "amount": 9.75,
+    "currency": "USD",
+    "order_date": "2026-10-14",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1069,
+    "customer": "ivan",
+    "product": "Python для всех",
+    "amount": 33.12,
+    "currency": "EUR",
+    "order_date": "2026-09-16",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1070,
+    "customer": "elena",
+    "product": "Sapiens",
+    "amount": 16.59,
+    "currency": "USD",
+    "order_date": "2026-09-26",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1071,
+    "customer": "sergey",
+    "product": "Преступление и наказание",
+    "amount": 12.06,
+    "currency": "EUR",
+    "order_date": "2026-09-15",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1072,
+    "customer": "elena",
+    "product": "1984",
+    "amount": 815.32,
+    "currency": "RUB",
+    "order_date": "2026-09-09",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1073,
+    "customer": "john",
+    "product": "Sapiens",
+    "amount": 18.96,
+    "currency": "GBP",
+    "order_date": "2026-09-28",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1074,
+    "customer": "dmitry",
+    "product": "Игра престолов",
+    "amount": 2209.72,
+    "currency": "RUB",
+    "order_date": "2026-10-19",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1075,
+    "customer": "olga",
+    "product": "Преступление и наказание",
+    "amount": 12.43,
+    "currency": "GBP",
+    "order_date": "2026-09-18",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1076,
+    "customer": "anna",
+    "product": "Sapiens",
+    "amount": 17.83,
+    "currency": "USD",
+    "order_date": "2026-09-21",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1077,
+    "customer": "alex",
+    "product": "Игра престолов",
+    "amount": 19.77,
+    "currency": "USD",
+    "order_date": "2026-10-16",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1078,
+    "customer": "sergey",
+    "product": "Преступление и наказание",
+    "amount": 11.27,
+    "currency": "USD",
+    "order_date": "2026-09-04",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1079,
+    "customer": "sergey",
+    "product": "Преступление и наказание",
+    "amount": 1006.67,
+    "currency": "RUB",
+    "order_date": "2026-10-01",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1080,
+    "customer": "john",
+    "product": "Мастер и Маргарита",
+    "amount": 11.88,
+    "currency": "GBP",
+    "order_date": "2026-10-18",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1081,
+    "customer": "elena",
+    "product": "Игра престолов",
+    "amount": 21.98,
+    "currency": "EUR",
+    "order_date": "2026-09-02",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1082,
+    "customer": "alex",
+    "product": "Dune",
+    "amount": 15.96,
+    "currency": "GBP",
+    "order_date": "2026-10-24",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1083,
+    "customer": "kate",
+    "product": "Sapiens",
+    "amount": 19.11,
+    "currency": "EUR",
+    "order_date": "2026-10-07",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1084,
+    "customer": "alex",
+    "product": "Мастер и Маргарита",
+    "amount": 13.11,
+    "currency": "USD",
+    "order_date": "2026-09-04",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1085,
+    "customer": "anna",
+    "product": "Python для всех",
+    "amount": 2605.32,
+    "currency": "RUB",
+    "order_date": "2026-10-19",
+    "review": ""
+  },
+  {
+    "order_id": 1086,
+    "customer": "maria",
+    "product": "Dune",
+    "amount": 16.32,
+    "currency": "GBP",
+    "order_date": "2026-10-01",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1087,
+    "customer": "maria",
+    "product": "Мастер и Маргарита",
+    "amount": 14.4,
+    "currency": "USD",
+    "order_date": "2026-10-20",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1088,
+    "customer": "kate",
+    "product": "Мастер и Маргарита",
+    "amount": 14.22,
+    "currency": "USD",
+    "order_date": "2026-09-10",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1089,
+    "customer": "olga",
+    "product": "Преступление и наказание",
+    "amount": 11.46,
+    "currency": "EUR",
+    "order_date": "2026-09-30",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1090,
+    "customer": "dmitry",
+    "product": "Python для всех",
+    "amount": 27.56,
+    "currency": "GBP",
+    "order_date": "2026-09-07",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1091,
+    "customer": "olga",
+    "product": "Маленький принц",
+    "amount": 8.84,
+    "currency": "USD",
+    "order_date": "2026-09-05",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1092,
+    "customer": "kate",
+    "product": "Маленький принц",
+    "amount": 6.98,
+    "currency": "EUR",
+    "order_date": "2026-10-21",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1093,
+    "customer": "john",
+    "product": "Мастер и Маргарита",
+    "amount": 12.72,
+    "currency": "GBP",
+    "order_date": "2026-10-12",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1094,
+    "customer": "sergey",
+    "product": "Чистый код",
+    "amount": 40.42,
+    "currency": "USD",
+    "order_date": "2026-09-24",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1095,
+    "customer": "elena",
+    "product": "Sapiens",
+    "amount": 16.49,
+    "currency": "EUR",
+    "order_date": "2026-09-28",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1096,
+    "customer": "dmitry",
+    "product": "Маленький принц",
+    "amount": 7.48,
+    "currency": "GBP",
+    "order_date": "2026-10-27",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1097,
+    "customer": "ivan",
+    "product": "Sapiens",
+    "amount": 18.0,
+    "currency": "EUR",
+    "order_date": "2026-10-02",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1098,
+    "customer": "anna",
+    "product": "Чистый код",
+    "amount": 36.62,
+    "currency": "EUR",
+    "order_date": "2026-09-18",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1099,
+    "customer": "olga",
+    "product": "Маленький принц",
+    "amount": 8.0,
+    "currency": "GBP",
+    "order_date": "2026-10-17",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1100,
+    "customer": "elena",
+    "product": "Dune",
+    "amount": 1391.85,
+    "currency": "RUB",
+    "order_date": "2026-09-29"
+  },
+  {
+    "order_id": 1101,
+    "customer": "olga",
+    "product": "Мастер и Маргарита",
+    "amount": 11.86,
+    "currency": "USD",
+    "order_date": "2026-09-20",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1102,
+    "customer": "john",
+    "product": "Маленький принц",
+    "amount": 7.81,
+    "currency": "GBP",
+    "order_date": "2026-09-22",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1103,
+    "customer": "maria",
+    "product": "Чистый код",
+    "amount": 3091.02,
+    "currency": "RUB",
+    "order_date": "2026-10-17",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1104,
+    "customer": "olga",
+    "product": "Преступление и наказание",
+    "amount": 10.29,
+    "currency": "GBP",
+    "order_date": "2026-10-18",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1105,
+    "customer": "olga",
+    "product": "Sapiens",
+    "amount": 17.88,
+    "currency": "GBP",
+    "order_date": "2026-09-19",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1106,
+    "customer": "john",
+    "product": "Преступление и наказание",
+    "amount": 10.49,
+    "currency": "GBP",
+    "order_date": "2026-09-09",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1107,
+    "customer": "elena",
+    "product": "Python для всех",
+    "amount": 34.58,
+    "currency": "USD",
+    "order_date": "2026-09-07",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1108,
+    "customer": "alex",
+    "product": "Мастер и Маргарита",
+    "amount": 12.49,
+    "currency": "GBP",
+    "order_date": "2026-09-04",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1109,
+    "customer": "elena",
+    "product": "Python для всех",
+    "amount": 2438.33,
+    "currency": "RUB",
+    "order_date": "2026-09-05",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1110,
+    "customer": "olga",
+    "product": "Маленький принц",
+    "amount": 7.09,
+    "currency": "USD",
+    "order_date": "2026-09-08",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1111,
+    "customer": "sergey",
+    "product": "Игра престолов",
+    "amount": 2044.78,
+    "currency": "RUB",
+    "order_date": "2026-09-29",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1112,
+    "customer": "kate",
+    "product": "Sapiens",
+    "amount": 18.53,
+    "currency": "GBP",
+    "order_date": "2026-10-10",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1113,
+    "customer": "dmitry",
+    "product": "Мастер и Маргарита",
+    "amount": 14.21,
+    "currency": "USD",
+    "order_date": "2026-10-13",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1114,
+    "customer": "ivan",
+    "product": "Война и мир",
+    "amount": 17.98,
+    "currency": "EUR",
+    "order_date": "2026-09-27",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1115,
+    "customer": "dmitry",
+    "product": "Sapiens",
+    "amount": 1421.82,
+    "currency": "RUB",
+    "order_date": "2026-10-15",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1116,
+    "customer": "sergey",
+    "product": "Sapiens",
+    "amount": 17.7,
+    "currency": "USD",
+    "order_date": "2026-09-08",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1117,
+    "customer": "maria",
+    "product": "Игра престолов",
+    "amount": 22.98,
+    "currency": "EUR",
+    "order_date": "2026-09-04",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1118,
+    "customer": "maria",
+    "product": "1984",
+    "amount": 10.68,
+    "currency": "GBP",
+    "order_date": "2026-09-30",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1119,
+    "customer": "maria",
+    "product": "Python для всех",
+    "amount": 3087.12,
+    "currency": "RUB",
+    "order_date": "2026-10-09",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1120,
+    "customer": "maria",
+    "product": "Мастер и Маргарита",
+    "amount": 1209.99,
+    "currency": "RUB",
+    "order_date": "2026-09-15",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1121,
+    "customer": "alex",
+    "product": "Маленький принц",
+    "amount": 9.0,
+    "currency": "USD",
+    "order_date": "2026-10-01",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1122,
+    "customer": "sergey",
+    "product": "Игра престолов",
+    "amount": 2220.41,
+    "currency": "RUB",
+    "order_date": "2026-10-11",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1123,
+    "customer": "anna",
+    "product": "Sapiens",
+    "amount": 16.66,
+    "currency": "USD",
+    "order_date": "2026-10-13",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1124,
+    "customer": "sergey",
+    "product": "Война и мир",
+    "amount": 18.48,
+    "currency": "EUR",
+    "order_date": "2026-10-23",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1125,
+    "customer": "anna",
+    "product": "Игра престолов",
+    "amount": 21.77,
+    "currency": "USD",
+    "order_date": "2026-09-08",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1126,
+    "customer": "ivan",
+    "product": "Dune",
+    "amount": 15.91,
+    "currency": "USD",
+    "order_date": "2026-09-13",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1127,
+    "customer": "elena",
+    "product": "Игра престолов",
+    "amount": 22.82,
+    "currency": "GBP",
+    "order_date": "2026-10-19",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1128,
+    "customer": "elena",
+    "product": "Мастер и Маргарита",
+    "amount": 11.76,
+    "currency": "EUR",
+    "order_date": "2026-10-27",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1129,
+    "customer": "dmitry",
+    "product": "Sapiens",
+    "amount": 14.54,
+    "currency": "USD",
+    "order_date": "2026-10-06",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1130,
+    "customer": "maria",
+    "product": "Мастер и Маргарита",
+    "amount": 1002.2,
+    "currency": "RUB",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1131,
+    "customer": "sergey",
+    "product": "1984",
+    "amount": 1051.2,
+    "currency": "RUB",
+    "order_date": "2026-10-24",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1132,
+    "customer": "olga",
+    "product": "Sapiens",
+    "amount": 1401.29,
+    "currency": "RUB",
+    "order_date": "2026-10-29",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1133,
+    "customer": "anna",
+    "product": "Маленький принц",
+    "amount": 8.69,
+    "currency": "EUR",
+    "order_date": "2026-10-30",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1134,
+    "customer": "kate",
+    "product": "Игра престолов",
+    "amount": 24.07,
+    "currency": "GBP",
+    "order_date": "2026-10-08",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1135,
+    "customer": "anna",
+    "product": "Sapiens",
+    "amount": 16.54,
+    "currency": "EUR",
+    "order_date": "2026-10-06",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1136,
+    "customer": "olga",
+    "product": "Игра престолов",
+    "amount": 1959.18,
+    "currency": "RUB",
+    "order_date": "2026-10-07",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1137,
+    "customer": "anna",
+    "product": "Dune",
+    "amount": 16.77,
+    "currency": "EUR",
+    "order_date": "2026-10-18",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1138,
+    "customer": "ivan",
+    "product": "Sapiens",
+    "amount": 1462.79,
+    "currency": "RUB",
+    "order_date": "2026-09-09",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1139,
+    "customer": "john",
+    "product": "Игра престолов",
+    "amount": 24.38,
+    "currency": "GBP",
+    "order_date": "2026-10-29",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1140,
+    "customer": "alex",
+    "product": "Sapiens",
+    "amount": 17.87,
+    "currency": "USD",
+    "order_date": "2026-09-05",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1141,
+    "customer": "maria",
+    "product": "Sapiens",
+    "amount": 16.03,
+    "currency": "GBP",
+    "order_date": "2026-10-25",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1142,
+    "customer": "ivan",
+    "product": "Чистый код",
+    "amount": 3736.66,
+    "currency": "RUB",
+    "order_date": "2026-10-10",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1143,
+    "customer": "maria",
+    "product": "Война и мир",
+    "amount": 20.15,
+    "currency": "EUR",
+    "order_date": "2026-09-28",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1144,
+    "customer": "ivan",
+    "product": "Война и мир",
+    "amount": 19.11,
+    "currency": "USD",
+    "order_date": "2026-09-21",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1145,
+    "customer": "olga",
+    "product": "Мастер и Маргарита",
+    "amount": 12.09,
+    "currency": "GBP",
+    "order_date": "2026-10-04",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1146,
+    "customer": "sergey",
+    "product": "Dune",
+    "amount": 13.79,
+    "currency": "EUR",
+    "order_date": "2026-10-10",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1147,
+    "customer": "elena",
+    "product": "Преступление и наказание",
+    "amount": 1162.11,
+    "currency": "RUB",
+    "order_date": "2026-10-11",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1148,
+    "customer": "dmitry",
+    "product": "Python для всех",
+    "amount": 2548.92,
+    "currency": "RUB",
+    "order_date": "2026-10-14",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1149,
+    "customer": "sergey",
+    "product": "Игра престолов",
+    "amount": 19.37,
+    "currency": "EUR",
+    "order_date": "2026-10-15",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1150,
+    "customer": "elena",
+    "product": "Python для всех",
+    "amount": 3010.87,
+    "currency": "RUB",
+    "order_date": "2026-09-07",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1151,
+    "customer": "ivan",
+    "product": "Преступление и наказание",
+    "amount": 1060.86,
+    "currency": "RUB",
+    "order_date": "2026-10-24",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1152,
+    "customer": "elena",
+    "product": "Dune",
+    "amount": 13.09,
+    "currency": "GBP",
+    "order_date": "2026-10-24",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1153,
+    "customer": "olga",
+    "product": "Python для всех",
+    "amount": 31.38,
+    "currency": "EUR",
+    "order_date": "2026-10-10",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1154,
+    "customer": "elena",
+    "product": "Python для всех",
+    "amount": 31.57,
+    "currency": "EUR",
+    "order_date": "2026-09-03",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1155,
+    "customer": "anna",
+    "product": "Маленький принц",
+    "amount": 8.4,
+    "currency": "GBP",
+    "order_date": "2026-10-18",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1156,
+    "customer": "alex",
+    "product": "Dune",
+    "amount": 13.92,
+    "currency": "EUR",
+    "order_date": "2026-09-17",
+    "review": "It is fine, nothing special"
+  },
+  {
+    "order_id": 1157,
+    "customer": "elena",
+    "product": "Sapiens",
+    "amount": 17.98,
+    "currency": "GBP",
+    "order_date": "2026-09-05",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1158,
+    "customer": "anna",
+    "product": "1984",
+    "amount": 11.46,
+    "currency": "EUR",
+    "order_date": "2026-09-06",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1159,
+    "customer": "anna",
+    "product": "Dune",
+    "amount": 14.2,
+    "currency": "USD",
+    "order_date": "2026-10-14",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1159,
+    "customer": "olga",
+    "product": "Python для всех",
+    "amount": 2992.95,
+    "currency": "RUB",
+    "order_date": "2026-10-01",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1161,
+    "customer": "elena",
+    "product": "Мастер и Маргарита",
+    "amount": 14.09,
+    "currency": "GBP",
+    "order_date": "2026-10-29",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1162,
+    "customer": "dmitry",
+    "product": "Python для всех",
+    "amount": 2440.36,
+    "currency": "RUB",
+    "order_date": "2026-10-02",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1163,
+    "customer": "elena",
+    "product": "Война и мир",
+    "amount": 17.95,
+    "currency": "USD",
+    "order_date": "2026-09-24",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1164,
+    "customer": "maria",
+    "product": "Игра престолов",
+    "amount": 2034.02,
+    "currency": "RUB",
+    "order_date": "2026-10-24",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1165,
+    "customer": "anna",
+    "product": "Sapiens",
+    "amount": 1701.67,
+    "currency": "RUB",
+    "order_date": "2026-09-14",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1166,
+    "customer": "anna",
+    "product": "Sapiens",
+    "amount": 1706.64,
+    "currency": "RUB",
+    "order_date": "2026-10-05",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1167,
+    "customer": "elena",
+    "product": "Чистый код",
+    "amount": 35.68,
+    "currency": "USD",
+    "order_date": "2026-09-06",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1168,
+    "customer": "alex",
+    "product": "Преступление и наказание",
+    "amount": 10.07,
+    "currency": "USD",
+    "order_date": "2026-10-21",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1169,
+    "customer": "olga",
+    "product": "Маленький принц",
+    "amount": 6.9,
+    "currency": "EUR",
+    "order_date": "2026-10-23",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1170,
+    "customer": "alex",
+    "product": "Преступление и наказание",
+    "amount": 12.46,
+    "currency": "GBP",
+    "order_date": "2026-09-09",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1171,
+    "customer": "ivan",
+    "product": "Игра престолов",
+    "amount": 23.93,
+    "currency": "GBP",
+    "order_date": "2026-09-09",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1172,
+    "customer": "anna",
+    "product": "Мастер и Маргарита",
+    "amount": 13.64,
+    "currency": "GBP",
+    "order_date": "2026-09-02",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1173,
+    "customer": "maria",
+    "product": "1984",
+    "amount": 9.07,
+    "currency": "GBP",
+    "order_date": "2026-10-18",
+    "review": "Excellent story and a wonderful ending"
+  },
+  {
+    "order_id": 1174,
+    "customer": "elena",
+    "product": "Война и мир",
+    "amount": 1722.41,
+    "currency": "RUB",
+    "order_date": "2026-10-03",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1175,
+    "customer": "ivan",
+    "product": "Преступление и наказание",
+    "amount": 12.3,
+    "currency": "USD",
+    "order_date": "2026-09-04",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1176,
+    "customer": "elena",
+    "product": "Sapiens",
+    "amount": 1480.15,
+    "currency": "RUB",
+    "order_date": "2026-09-05",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1177,
+    "customer": "dmitry",
+    "product": "Война и мир",
+    "amount": 20.03,
+    "currency": "GBP",
+    "order_date": "2026-10-10",
+    "review": "Прекрасный сюжет, очень рекомендую"
+  },
+  {
+    "order_id": 1178,
+    "customer": "john",
+    "product": "Маленький принц",
+    "amount": 7.61,
+    "currency": "GBP",
+    "order_date": "2026-10-09",
+    "review": "Читается нормально, сюжет средний"
+  },
+  {
+    "order_id": 1179,
+    "customer": "john",
+    "product": "Dune",
+    "amount": 16.5,
+    "currency": "USD",
+    "order_date": "2026-10-17",
+    "review": "Супер, перечитаю ещё раз"
+  },
+  {
+    "order_id": 1180,
+    "customer": "anna",
+    "product": "Преступление и наказание",
+    "amount": 1025.11,
+    "currency": "RUB",
+    "order_date": "2026-10-23",
+    "review": "Не понравилось, слишком скучно"
+  },
+  {
+    "order_id": 1181,
+    "customer": "sergey",
+    "product": "Sapiens",
+    "amount": 1475.71,
+    "currency": "RUB",
+    "order_date": "2026-09-21",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1182,
+    "customer": "maria",
+    "product": "Python для всех",
+    "amount": 34.4,
+    "currency": "GBP",
+    "order_date": "2026-10-24",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1183,
+    "customer": "john",
+    "product": "Война и мир",
+    "amount": 19.05,
+    "currency": "USD",
+    "order_date": "2026-09-04",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1184,
+    "customer": "sergey",
+    "product": "Маленький принц",
+    "amount": 8.26,
+    "currency": "GBP",
+    "order_date": "2026-10-26",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1185,
+    "customer": "kate",
+    "product": "Мастер и Маргарита",
+    "amount": 12.96,
+    "currency": "GBP",
+    "order_date": "2026-10-03",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1186,
+    "customer": "anna",
+    "product": "Преступление и наказание",
+    "amount": 12.07,
+    "currency": "EUR",
+    "order_date": "2026-10-25",
+    "review": "Ужасная книга, скучно и затянуто, потратил деньги зря"
+  },
+  {
+    "order_id": 1187,
+    "customer": "sergey",
+    "product": "Игра престолов",
+    "amount": 19.62,
+    "currency": "GBP",
+    "order_date": "2026-10-25",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1188,
+    "customer": "alex",
+    "product": "Игра престолов",
+    "amount": 22.74,
+    "currency": "USD",
+    "order_date": "2026-09-18",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1189,
+    "customer": "kate",
+    "product": "Python для всех",
+    "amount": 29.15,
+    "currency": "GBP",
+    "order_date": "2026-10-13",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1190,
+    "customer": "john",
+    "product": "Dune",
+    "amount": 13.67,
+    "currency": "USD",
+    "order_date": "2026-09-14",
+    "review": "Отличная книга, читал не отрываясь"
+  },
+  {
+    "order_id": 1191,
+    "customer": "dmitry",
+    "product": "Dune",
+    "amount": 1352.1,
+    "currency": "RUB",
+    "order_date": "2026-10-17",
+    "review": "Boring plot and terrible translation, would not recommend"
+  },
+  {
+    "order_id": 1192,
+    "customer": "kate",
+    "product": "Чистый код",
+    "amount": 40.78,
+    "currency": "USD",
+    "order_date": "2026-09-04",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1193,
+    "customer": "kate",
+    "product": "Война и мир",
+    "amount": 19.11,
+    "currency": "GBP",
+    "order_date": "2026-09-29",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1194,
+    "customer": "sergey",
+    "product": "Dune",
+    "amount": 13.99,
+    "currency": "GBP",
+    "order_date": "2026-09-08",
+    "review": "Great book, loved every chapter"
+  },
+  {
+    "order_id": 1195,
+    "customer": "olga",
+    "product": "Python для всех",
+    "amount": 2761.59,
+    "currency": "RUB",
+    "order_date": "2026-09-26",
+    "review": "Обычная книга, ничего особенного"
+  },
+  {
+    "order_id": 1196,
+    "customer": "alex",
+    "product": "Маленький принц",
+    "amount": 6.77,
+    "currency": "USD",
+    "order_date": "2026-10-19",
+    "review": "Доставили вовремя, книга как книга"
+  },
+  {
+    "order_id": 1197,
+    "customer": "sergey",
+    "product": "Python для всех",
+    "amount": 28.95,
+    "currency": "GBP",
+    "order_date": "2026-09-12",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  },
+  {
+    "order_id": 1198,
+    "customer": "john",
+    "product": "1984",
+    "amount": 944.26,
+    "currency": "RUB",
+    "order_date": "2026-10-24",
+    "review": "Bad edition, pages fell out after a week"
+  },
+  {
+    "order_id": 1199,
+    "customer": "ivan",
+    "product": "Чистый код",
+    "amount": 35.67,
+    "currency": "USD",
+    "order_date": "2026-09-30",
+    "review": "Замечательное издание, быстрая доставка, всё отлично"
+  }
+]
