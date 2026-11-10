@@ -1,5 +1,6 @@
 from typing import Any
 
+# костыль костыль, будет Redis/PosgreSQL
 _jobs: dict[str, dict[str, Any]] = {}
 
 
@@ -9,6 +10,7 @@ def create_job(job_id: str) -> None:
         "total": 0,
         "processed": 0,
         "failed": 0,
+        "processed_orders": [],
         "result": None,
     }
 
