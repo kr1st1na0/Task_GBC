@@ -1,5 +1,6 @@
-from fastapi import APIRouter, BackgroundTasks, HTTPException, UploadFile, Response
-from app import processor, storage
+from fastapi import APIRouter, HTTPException, UploadFile, Response
+from app.storage import redis
+from app.tasks.processor import process_orders
 from app.schemas.job import JobCreated, JobResult, JobStatus
 
 from typing import Literal
@@ -11,17 +12,20 @@ router = APIRouter(prefix="/jobs", tags=["jobs"])
 
 
 @router.post("", status_code=202, response_model=JobCreated)
-async def create_job(file: UploadFile, background_tasks: BackgroundTasks):
+async def create_job(file: UploadFile):
     job_id = str(uuid.uuid4())
-    storage.create_job(job_id)
+    redis.create_job(job_id)
     content = await file.read()
-    background_tasks.add_task(processor.process_orders, job_id, content)
+
+    # задача app.processor:process_orders с job_id, content -> в очередь TaskIQ (в Redis-брокер)
+    await process_orders.kiq(job_id, content)
+    
     return JobCreated(job_id=job_id)
 
 
 @router.get("/{job_id}", response_model=JobStatus)
 def get_status(job_id: str):
-    job = storage.get_job(job_id)
+    job = redis.get_job(job_id)
     if job is None:
         raise HTTPException(status_code=404, detail="job not found")
     return JobStatus(
@@ -35,7 +39,7 @@ def get_status(job_id: str):
 
 @router.get("/{job_id}/result")
 def get_result(job_id: str, format: Literal["json", "csv"] = "json"):
-    job = storage.get_job(job_id)
+    job = redis.get_job(job_id)
     if job is None:
         raise HTTPException(status_code=404, detail="job not found")
     if job["status"] != "done":

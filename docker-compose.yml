@@ -6,6 +6,16 @@ services:
     ports:
       - "6379:6379"
 
+  redis-broker-service:
+    image: redis:7-alpine
+    container_name: redis_broker
+    ports: ["6380:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   api-service:
     build: .
     container_name: api
@@ -15,3 +25,15 @@ services:
       - .env
     depends_on:
       - redis-storage-service
+
+  worker-service:
+    build: .
+    container_name: worker
+    command: taskiq worker app.tasks.processor:broker --workers 2
+    env_file:
+      - .env
+    depends_on:
+      redis-storage-service:
+        condition: service_started
+      redis-broker-service:
+        condition: service_healthy

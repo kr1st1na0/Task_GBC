@@ -1,27 +1,28 @@
 from pydantic import ValidationError
 import json
 
-from app import storage
+from app.storage import redis
 from app.schemas.order import SUPPORTED_CURRENCIES, Order
 from app.services.rates import get_rate_to_usd
-from app.summary import build_summary
+from app.tasks.summary import build_summary
+from app.tasks.broker import broker
 
 
 def _updater(job_id: str, processed: int, errors: list[dict]) -> None:
-    storage.update_job(
+    redis.update_job(
         job_id,
         processed=processed,
         failed=len(errors)
     )
 
-
+@broker.task
 def process_orders(job_id: str, content: bytes) -> None:
-    storage.update_job(job_id, status="running")
+    redis.update_job(job_id, status="running")
 
     try:
         raw_orders = json.loads(content)
     except json.JSONDecodeError as exc:
-        storage.update_job(
+        redis.update_job(
             job_id,
             status="failed",
             result={"error": f"invalid json: {exc}"},
@@ -29,7 +30,7 @@ def process_orders(job_id: str, content: bytes) -> None:
         return
 
     total = len(raw_orders)
-    storage.update_job(job_id, total=total)
+    redis.update_job(job_id, total=total)
 
     errors: list[dict] = []
     processed_orders: list[dict] = []
@@ -105,7 +106,7 @@ def process_orders(job_id: str, content: bytes) -> None:
 
     # print("PROCESSED_ORDERS:", processed_orders)
     summary = build_summary(processed_orders)
-    storage.update_job(
+    redis.update_job(
         job_id,
         status="done",
         processed_orders=processed_orders,
