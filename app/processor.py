@@ -4,6 +4,7 @@ import json
 from app import storage
 from app.schemas.order import SUPPORTED_CURRENCIES, Order
 from app.services.rates import get_rate_to_usd
+from app.summary import build_summary
 
 
 def _updater(job_id: str, processed: int, errors: list[dict]) -> None:
@@ -102,7 +103,7 @@ def process_orders(job_id: str, content: bytes) -> None:
         _updater(job_id, processed, errors)
 
     # print("PROCESSED_ORDERS:", processed_orders)
-
+    summary = build_summary(processed_orders)
     storage.update_job(
         job_id,
         status="done",
@@ -113,7 +114,7 @@ def process_orders(job_id: str, content: bytes) -> None:
             "total": total,
             "processed": processed,
             "failed": len(errors),
-            "summary": {},          #!!!
+            "summary": summary,
             "errors": errors,
         },
     )

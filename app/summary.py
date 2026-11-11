@@ -32,8 +32,13 @@ def build_summary(processed_orders: list[dict]) -> dict:
         .to_dict(orient="records")
     )
 
-    #! динамика: сумма в USD по неделям (по order_date)
-    weekly_usd = []
+    # динамика: сумма в USD по неделям (по order_date)
+    weekly_usd = (
+        df.assign(week=df["order_date"].dt.to_period("W").astype(str))
+        .groupby("week", as_index=False)["amount_usd"].sum()
+        .round(2)
+        .to_dict(orient="records")
+    )
 
     # общая сумма и средний чек
     total_usd = round(float(df["amount_usd"].sum()), 2)
