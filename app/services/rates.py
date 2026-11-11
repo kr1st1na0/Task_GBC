@@ -11,7 +11,7 @@ def get_rate_to_usd(currency: str, order_date: str) -> float:
     url = USD_URL.format(date=order_date)
     for attempt in range(MAX_ATTEMPTS):
         try: 
-            # ловим сетеввые и 5xx
+            # ловим сетевые и 5xx
             response = requests.get(url, timeout=5.0)
             if response.status_code >= 500:
                 raise requests.HTTPError(f"server error {response.status_code}", response=response)

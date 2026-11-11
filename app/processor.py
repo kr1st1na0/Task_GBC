@@ -14,6 +14,7 @@ def _updater(job_id: str, processed: int, errors: list[dict]) -> None:
         failed=len(errors)
     )
 
+
 def process_orders(job_id: str, content: bytes) -> None:
     storage.update_job(job_id, status="running")
 

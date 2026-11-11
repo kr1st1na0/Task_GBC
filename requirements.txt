@@ -1,1 +1,22 @@
-# чтобы не забыть...
+annotated-types==0.8.0
+anyio==4.16.0
+certifi==2026.10.23
+charset-normalizer==3.5.2
+click==8.5.1
+fastapi==0.115.12
+h11==0.16.0
+idna==3.20
+numpy==2.5.4
+pandas==3.1.1
+pydantic==2.14.3
+pydantic_core==2.50.4
+python-dateutil==4.0.0
+python-multipart==0.0.33
+redis==8.1.0
+requests==2.34.2
+starlette==0.46.2
+typing-inspection==0.4.5
+typing_extensions==4.16.0
+tzdata==2026.6
+urllib3==2.8.0
+uvicorn==0.34.3
