@@ -141,7 +141,7 @@ docker exec -it redis_storage redis-cli FLUSHALL
 
 ```processed_orders = [1, 4, 5]```
 
-```errors = [{2, "unknown currency: XYZ"}, {1, "duplicate order"}, {1, "duplicate order"}, {3, "..."}]```
+```errors = [{2, "unknown currency: XYZ"}, {1, "duplicate order"}, {1, "duplicate order"}, {3, "Field required"}]```
 
 ```total = 7```
 
