@@ -8,16 +8,29 @@ from app.tasks.summary import build_summary
 from app.tasks.broker import broker
 
 
-def _updater(job_id: str, processed: int, errors: list[dict]) -> None:
+def _updater(job_id: str, processed: int, errors: list[dict], processed_orders: list[dict], all_seen_ids: set[int]) -> None:
     redis.update_job(
         job_id,
         processed=processed,
-        failed=len(errors)
+        failed=len(errors),
+        processed_orders=processed_orders,
+        all_seen_ids=list(all_seen_ids),
+        result={"errors": errors},
     )
 
-@broker.task
+@broker.task(retry_on_error=True, max_retries=3)
 def process_orders(job_id: str, content: bytes) -> None:
-    redis.update_job(job_id, status="running")
+    job = redis.get_job(job_id)
+    if job is None or job["status"] == "done":
+        return
+
+    # берем job из прошлого запуска (retry) или пустота
+    result = job.get("result") or {}
+    errors = result.get("errors", [])
+    processed_orders = job.get("processed_orders", [])
+    processed = job.get("processed", 0)
+    all_seen_ids = set(job.get("all_seen_ids", []))
+    #
 
     try:
         raw_orders = json.loads(content)
@@ -30,15 +43,36 @@ def process_orders(job_id: str, content: bytes) -> None:
         return
 
     total = len(raw_orders)
-    redis.update_job(job_id, total=total)
-
-    errors: list[dict] = []
-    processed_orders: list[dict] = []
-    processed = 0
-    seen_order_ids: set[int] = set() 
+    redis.update_job(job_id, status="running", total=total)
+    local_seen_ids: set[int] = set() # при текущем запуске для дубликатов
 
     for raw in raw_orders:
+    #! чекали retry и дубликаты
+    # initial_processed_count = len(processed_orders)
+    # for i, raw in enumerate(raw_orders):
+    #     if i == 2 and initial_processed_count == 0:  #! перед 3-й записью при 1-м запуске падаем
+    #         raise Exception("test fall: check retry")
+    #!
         order_id = raw.get("order_id") if isinstance(raw, dict) else None
+
+        # дубликат текущий запуск
+        if order_id in local_seen_ids: # если уже при текущем запуске был
+            errors.append(
+                {
+                    "order_id": order_id,
+                    "reason": f"duplicate order"
+                }
+            )
+            all_seen_ids.add(order_id)
+            _updater(job_id, processed, errors, processed_orders, all_seen_ids)
+            continue
+        # дубликат retry запуск
+        if order_id in all_seen_ids: # из прошлого запуска (retry)
+            local_seen_ids.add(order_id)
+            continue
+
+        local_seen_ids.add(order_id)
+        
         # валидация
         try:
             order = Order.model_validate(raw)
@@ -49,7 +83,8 @@ def process_orders(job_id: str, content: bytes) -> None:
                     "reason": exc.errors()[0]["msg"],
                 }
             )
-            _updater(job_id, processed, errors)
+            all_seen_ids.add(order_id)
+            _updater(job_id, processed, errors, processed_orders, all_seen_ids)
             continue
 
         # неизвестная валюта
@@ -57,21 +92,11 @@ def process_orders(job_id: str, content: bytes) -> None:
             errors.append(
                 {
                     "order_id": order_id,
-                    "reason": f"unknown currency {order.currency}"
+                    "reason": f"unknown currency: {order.currency}"
                 }
             )
-            _updater(job_id, processed, errors)
-            continue
-        
-        # дубликат
-        if order_id in seen_order_ids:
-            errors.append(
-                {
-                    "order_id": order_id,
-                    "reason": f"duplicate order"
-                }
-            )
-            _updater(job_id, processed, errors)
+            all_seen_ids.add(order_id)
+            _updater(job_id, processed, errors, processed_orders, all_seen_ids)
             continue
 
         # перевод в usd
@@ -84,12 +109,13 @@ def process_orders(job_id: str, content: bytes) -> None:
                     "reason": str(exc)
                 }
             )
-            _updater(job_id, processed, errors)
+            all_seen_ids.add(order_id)
+            _updater(job_id, processed, errors, processed_orders, all_seen_ids)
             continue
         amount_usd = round(order.amount * rate, 2)
-        # print(rate)
 
-        seen_order_ids.add(order_id)
+        # print(rate)
+        all_seen_ids.add(order_id)
         processed += 1
         processed_orders.append(
             {
@@ -102,7 +128,7 @@ def process_orders(job_id: str, content: bytes) -> None:
                 "amount_usd": amount_usd,
             }
         )
-        _updater(job_id, processed, errors)
+        _updater(job_id, processed, errors, processed_orders, all_seen_ids)
 
     # print("PROCESSED_ORDERS:", processed_orders)
     summary = build_summary(processed_orders)
@@ -110,6 +136,7 @@ def process_orders(job_id: str, content: bytes) -> None:
         job_id,
         status="done",
         processed_orders=processed_orders,
+        all_seen_ids=list(all_seen_ids),
         result={
             "job_id": job_id,
             "status": "done",

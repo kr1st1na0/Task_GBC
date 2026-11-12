@@ -20,8 +20,9 @@ def create_job(job_id: str) -> None:
             "failed": 0,
         },
     )
-    _client.set(f"{_key(job_id)}:processed_orders", json.dumps([]))
     _client.set(f"{_key(job_id)}:result", json.dumps(None))
+    _client.set(f"{_key(job_id)}:processed_orders", json.dumps([]))
+    _client.set(f"{_key(job_id)}:all_seen_ids", json.dumps([]))
 
 
 def get_job(job_id: str) -> dict[str, Any] | None:
@@ -32,6 +33,7 @@ def get_job(job_id: str) -> dict[str, Any] | None:
     data = _client.hgetall(key)
     result_raw = _client.get(f"{key}:result")
     processed_orders_raw = _client.get(f"{key}:processed_orders")
+    all_seen_raw = _client.get(f"{key}:all_seen_ids")
 
     return {
         "status": data.get("status"),
@@ -40,6 +42,7 @@ def get_job(job_id: str) -> dict[str, Any] | None:
         "failed": int(data.get("failed", 0)),
         "result": json.loads(result_raw) if result_raw else None,
         "processed_orders": json.loads(processed_orders_raw) if processed_orders_raw else [],
+        "all_seen_ids": json.loads(all_seen_raw) if all_seen_raw else [],
     }
 
 
@@ -53,6 +56,8 @@ def update_job(job_id: str, **fields: Any) -> None:
             _client.set(f"{key}:result", json.dumps(value))
         elif name == "processed_orders":
             _client.set(f"{key}:processed_orders", json.dumps(value))
+        elif name == "all_seen_ids":
+            _client.set(f"{key}:all_seen_ids", json.dumps(list(value)))
         else:
             hash_fields[name] = value
     if hash_fields:

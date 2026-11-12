@@ -1,6 +1,6 @@
 [
   {
-    "order_id": 1000,
+    "order_id": 1,
     "customer": "alex",
     "product": "Война и мир",
     "amount": 20.77,
@@ -9,16 +9,7 @@
     "review": "Плохое качество печати, страницы рваные, разочарован"
   },
   {
-    "order_id": 1000,
-    "customer": "alex",
-    "product": "Война и мир",
-    "amount": 20.77,
-    "currency": "USD",
-    "order_date": "2026-10-18",
-    "review": "Плохое качество печати, страницы рваные, разочарован"
-  },
-  {
-    "order_id": 1001,
+    "order_id": 2,
     "customer": "elena",
     "product": "Преступление и наказание",
     "amount": 11.75,
@@ -27,7 +18,25 @@
     "review": "Прекрасный сюжет, очень рекомендую"
   },
   {
-    "order_id": 1002,
+    "order_id": 1,
+    "customer": "alex",
+    "product": "Война и мир",
+    "amount": 20.77,
+    "currency": "USD",
+    "order_date": "2026-10-18",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 1,
+    "customer": "alex",
+    "product": "Война и мир",
+    "amount": 20.77,
+    "currency": "USD",
+    "order_date": "2026-10-18",
+    "review": "Плохое качество печати, страницы рваные, разочарован"
+  },
+  {
+    "order_id": 3,
     "customer": "anna",
     "product": "Python для всех",
     "currency": "USD",
@@ -35,7 +44,7 @@
     "review": "Не понравилось, слишком скучно"
   },
   {
-    "order_id": 1003,
+    "order_id": 4,
     "customer": "maria",
     "product": "1984",
     "amount": 11.75,
@@ -44,7 +53,7 @@
     "review": "Обычная книга, ничего особенного"
   },
   {
-    "order_id": 1004,
+    "order_id": 5,
     "customer": "elena",
     "product": "Война и мир",
     "amount": 11.75,
