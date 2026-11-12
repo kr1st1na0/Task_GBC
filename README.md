@@ -105,11 +105,17 @@ docker exec -it redis_storage redis-cli FLUSHALL
 | 1 | {1, 2} -> {1, 2} | {1, 2} -> {1, 2} | дубликат |
 | 1 | {1, 2} -> {1, 2} | {1, 2} -> {1, 2} | дубликат |
 | 3 | {1, 2} -> {1, 2, 3} | {1, 2} -> {1, 2, 3} | обработали |
+
 Итог: 
+
 ```processed_orders = [1, 2, 3]```
+
 ```errors = [{1, "duplicate order"}, {1, "duplicate order"}]```
+
 ```total = 5```
+
 ```processed = 3```
+
 ```failed = 2```
 
 2. **Retry запуск:** 
@@ -130,9 +136,15 @@ docker exec -it redis_storage redis-cli FLUSHALL
 | 3 | {1, 2} -> {1, 2, 3} | {1, 2} -> {1, 2, 3} | нет amount |
 | 4 | {1, 2, 3} -> {1, 2, 3, 4} | {1, 2, 3} -> {1, 2, 3, 4} | обработали |
 | 5 | {1, 2, 3, 4} -> {1, 2, 3, 4, 5} | {1, 2, 3, 4} -> {1, 2, 3, 4, 5} | обработали |
+
 Итог: 
+
 ```processed_orders = [1, 4, 5]```
+
 ```errors = [{2, "unknown currency: XYZ"}, {1, "duplicate order"}, {1, "duplicate order"}, {3, "..."}]```
+
 ```total = 7```
+
 ```processed = 3```
+
 ```failed = 4```
