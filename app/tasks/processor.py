@@ -44,7 +44,10 @@ async def process_orders(job_id: str, content: bytes) -> None:
         return
 
     total = len(raw_orders)
-    await redis.update_job(job_id, status="running", total=total)
+    await redis.update_job(
+        job_id,
+        status="running",
+        total=total)
     local_seen_ids: set[int] = set() # при текущем запуске для дубликатов
 
     for raw in raw_orders:

@@ -28,7 +28,10 @@ async def create_job(file: UploadFile):
 async def get_status(job_id: str):
     job = await redis.get_job(job_id)
     if job is None:
-        raise HTTPException(status_code=404, detail="job not found")
+        raise HTTPException(
+            status_code=404,
+            detail="job not found"
+        )
     return JobStatus(
         job_id=job_id,
         status=job["status"],
@@ -42,7 +45,10 @@ async def get_status(job_id: str):
 async def get_result(job_id: str, format: Literal["json", "csv"] = "json"):
     job = await redis.get_job(job_id)
     if job is None:
-        raise HTTPException(status_code=404, detail="job not found")
+        raise HTTPException(
+            status_code=404, 
+            detail="job not found"
+        )
     if job["status"] != "done":
         raise HTTPException(
             status_code=409,
