@@ -7,3 +7,4 @@ requests==2.34.2
 taskiq==0.13.0
 taskiq-redis==1.2.4
 uvicorn==0.34.3
+httpx

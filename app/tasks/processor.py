@@ -1,5 +1,6 @@
 from pydantic import ValidationError
 import json
+import asyncio
 
 from app.storage import redis
 from app.schemas.order import SUPPORTED_CURRENCIES, Order
@@ -8,8 +9,8 @@ from app.tasks.summary import build_summary
 from app.tasks.broker import broker
 
 
-def _updater(job_id: str, processed: int, errors: list[dict], processed_orders: list[dict], all_seen_ids: set[int]) -> None:
-    redis.update_job(
+async def _updater(job_id: str, processed: int, errors: list[dict], processed_orders: list[dict], all_seen_ids: set[int]) -> None:
+    await redis.update_job(
         job_id,
         processed=processed,
         failed=len(errors),
@@ -19,8 +20,8 @@ def _updater(job_id: str, processed: int, errors: list[dict], processed_orders: 
     )
 
 @broker.task(retry_on_error=True, max_retries=3)
-def process_orders(job_id: str, content: bytes) -> None:
-    job = redis.get_job(job_id)
+async def process_orders(job_id: str, content: bytes) -> None:
+    job = await redis.get_job(job_id)
     if job is None or job["status"] == "done":
         return
 
@@ -35,7 +36,7 @@ def process_orders(job_id: str, content: bytes) -> None:
     try:
         raw_orders = json.loads(content)
     except json.JSONDecodeError as exc:
-        redis.update_job(
+        await redis.update_job(
             job_id,
             status="failed",
             result={"error": f"invalid json: {exc}"},
@@ -43,7 +44,7 @@ def process_orders(job_id: str, content: bytes) -> None:
         return
 
     total = len(raw_orders)
-    redis.update_job(job_id, status="running", total=total)
+    await redis.update_job(job_id, status="running", total=total)
     local_seen_ids: set[int] = set() # при текущем запуске для дубликатов
 
     for raw in raw_orders:
@@ -64,7 +65,7 @@ def process_orders(job_id: str, content: bytes) -> None:
                 }
             )
             all_seen_ids.add(order_id)
-            _updater(job_id, processed, errors, processed_orders, all_seen_ids)
+            await _updater(job_id, processed, errors, processed_orders, all_seen_ids)
             continue
         # дубликат retry запуск
         if order_id in all_seen_ids: # из прошлого запуска (retry)
@@ -84,7 +85,7 @@ def process_orders(job_id: str, content: bytes) -> None:
                 }
             )
             all_seen_ids.add(order_id)
-            _updater(job_id, processed, errors, processed_orders, all_seen_ids)
+            await _updater(job_id, processed, errors, processed_orders, all_seen_ids)
             continue
 
         # неизвестная валюта
@@ -96,12 +97,12 @@ def process_orders(job_id: str, content: bytes) -> None:
                 }
             )
             all_seen_ids.add(order_id)
-            _updater(job_id, processed, errors, processed_orders, all_seen_ids)
+            await _updater(job_id, processed, errors, processed_orders, all_seen_ids)
             continue
 
         # перевод в usd
         try:
-            rate = get_rate_to_usd(order.currency, order.order_date.isoformat())
+            rate = await get_rate_to_usd(order.currency, order.order_date.isoformat())
         except Exception as exc:
             errors.append(
                 {
@@ -110,7 +111,7 @@ def process_orders(job_id: str, content: bytes) -> None:
                 }
             )
             all_seen_ids.add(order_id)
-            _updater(job_id, processed, errors, processed_orders, all_seen_ids)
+            await _updater(job_id, processed, errors, processed_orders, all_seen_ids)
             continue
         amount_usd = round(order.amount * rate, 2)
 
@@ -128,15 +129,34 @@ def process_orders(job_id: str, content: bytes) -> None:
                 "amount_usd": amount_usd,
             }
         )
-        _updater(job_id, processed, errors, processed_orders, all_seen_ids)
+        await _updater(job_id, processed, errors, processed_orders, all_seen_ids)
 
     # print("PROCESSED_ORDERS:", processed_orders)
-    summary = build_summary(processed_orders)
-    redis.update_job(
+    await finalize_job.kiq(job_id) # все сломало.
+
+@broker.task(retry_on_error=True, max_retries=3)
+async def finalize_job(job_id: str) -> None:
+    job = await redis.get_job(job_id)
+    if job is None or job["status"] == "done":
+        return
+
+    processed_orders = job.get("processed_orders", [])
+    result = job.get("result") or {}
+    errors = result.get("errors", [])
+    processed = job.get("processed", 0)
+    total = job.get("total", 0)
+    all_seen_ids = job.get("all_seen_ids", [])
+
+    # summary = build_summary(processed_orders)
+    # чтоб пандас не блокал even loop, отправляем его в отдельный поток
+    # при мелких нагрузках мб дольше, но хззз (тк надо переключить, дождаться, вернуть результат)
+    summary = await asyncio.to_thread(build_summary, processed_orders)
+
+    await redis.update_job(
         job_id,
         status="done",
         processed_orders=processed_orders,
-        all_seen_ids=list(all_seen_ids),
+        all_seen_ids=all_seen_ids,
         result={
             "job_id": job_id,
             "status": "done",

@@ -4,6 +4,7 @@ from app.tasks.processor import process_orders
 from app.schemas.job import JobCreated, JobResult, JobStatus
 
 from typing import Literal
+import asyncio
 import uuid
 import csv
 import io
@@ -14,7 +15,7 @@ router = APIRouter(prefix="/jobs", tags=["jobs"])
 @router.post("", status_code=202, response_model=JobCreated)
 async def create_job(file: UploadFile):
     job_id = str(uuid.uuid4())
-    redis.create_job(job_id)
+    await redis.create_job(job_id)
     content = await file.read()
 
     # задача app.processor:process_orders с job_id, content -> в очередь TaskIQ (в Redis-брокер)
@@ -24,8 +25,8 @@ async def create_job(file: UploadFile):
 
 
 @router.get("/{job_id}", response_model=JobStatus)
-def get_status(job_id: str):
-    job = redis.get_job(job_id)
+async def get_status(job_id: str):
+    job = await redis.get_job(job_id)
     if job is None:
         raise HTTPException(status_code=404, detail="job not found")
     return JobStatus(
@@ -38,8 +39,8 @@ def get_status(job_id: str):
 
 
 @router.get("/{job_id}/result")
-def get_result(job_id: str, format: Literal["json", "csv"] = "json"):
-    job = redis.get_job(job_id)
+async def get_result(job_id: str, format: Literal["json", "csv"] = "json"):
+    job = await redis.get_job(job_id)
     if job is None:
         raise HTTPException(status_code=404, detail="job not found")
     if job["status"] != "done":
@@ -48,10 +49,14 @@ def get_result(job_id: str, format: Literal["json", "csv"] = "json"):
             detail=f"job is not finished, status={job['status']}",
         )
     if format == "csv":
-        return _result_csv_format(job_id, job)
+        # return _result_csv_format(job_id, job)
+        # как с пандами..
+        return await asyncio.to_thread(_result_csv_format, job_id, job)
     return JobResult(**job["result"])
 
 
+#! наверное лучше генерить в processor.py и в redis хранить csv, а тут ток ручки ручки
+# ВООБЩЕ хорошо бы в чем-нибудь другом хранить, но да... пока так
 def _result_csv_format(job_id: str, job: dict) -> Response:
     rows = job.get("processed_orders", [])
 

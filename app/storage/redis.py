@@ -2,7 +2,7 @@ from app.config import REDIS_URL
 
 from typing import Any
 import json
-import redis
+import redis.asyncio as redis
 
 _client = redis.Redis.from_url(REDIS_URL, decode_responses=True)
 
@@ -10,8 +10,8 @@ _client = redis.Redis.from_url(REDIS_URL, decode_responses=True)
 def _key(job_id: str) -> str:
     return f"job:{job_id}"
 
-def create_job(job_id: str) -> None:
-    _client.hset(
+async def create_job(job_id: str) -> None:
+    await _client.hset(
         _key(job_id),
         mapping = {
             "status": "pending",
@@ -20,20 +20,20 @@ def create_job(job_id: str) -> None:
             "failed": 0,
         },
     )
-    _client.set(f"{_key(job_id)}:result", json.dumps(None))
-    _client.set(f"{_key(job_id)}:processed_orders", json.dumps([]))
-    _client.set(f"{_key(job_id)}:all_seen_ids", json.dumps([]))
+    await _client.set(f"{_key(job_id)}:result", json.dumps(None))
+    await _client.set(f"{_key(job_id)}:processed_orders", json.dumps([]))
+    await _client.set(f"{_key(job_id)}:all_seen_ids", json.dumps([]))
 
 
-def get_job(job_id: str) -> dict[str, Any] | None:
+async def get_job(job_id: str) -> dict[str, Any] | None:
     key = _key(job_id)
-    if not _client.exists(key):
+    if not await _client.exists(key):
         return None
 
-    data = _client.hgetall(key)
-    result_raw = _client.get(f"{key}:result")
-    processed_orders_raw = _client.get(f"{key}:processed_orders")
-    all_seen_raw = _client.get(f"{key}:all_seen_ids")
+    data = await _client.hgetall(key)
+    result_raw = await _client.get(f"{key}:result")
+    processed_orders_raw = await _client.get(f"{key}:processed_orders")
+    all_seen_raw = await _client.get(f"{key}:all_seen_ids")
 
     return {
         "status": data.get("status"),
@@ -46,19 +46,19 @@ def get_job(job_id: str) -> dict[str, Any] | None:
     }
 
 
-def update_job(job_id: str, **fields: Any) -> None:
+async def update_job(job_id: str, **fields: Any) -> None:
     key = _key(job_id)
-    if not _client.exists(key):
+    if not await _client.exists(key):
         return
     hash_fields = {}
     for name, value in fields.items():
         if name == "result":
-            _client.set(f"{key}:result", json.dumps(value))
+            await _client.set(f"{key}:result", json.dumps(value))
         elif name == "processed_orders":
-            _client.set(f"{key}:processed_orders", json.dumps(value))
+            await _client.set(f"{key}:processed_orders", json.dumps(value))
         elif name == "all_seen_ids":
-            _client.set(f"{key}:all_seen_ids", json.dumps(list(value)))
+            await _client.set(f"{key}:all_seen_ids", json.dumps(list(value)))
         else:
             hash_fields[name] = value
     if hash_fields:
-        _client.hset(key, mapping=hash_fields)
+        await _client.hset(key, mapping=hash_fields)
