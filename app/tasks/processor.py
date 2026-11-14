@@ -129,6 +129,7 @@ async def process_orders(job_id: str, content: bytes) -> None:
                 "amount": order.amount,
                 "currency": order.currency,
                 "order_date": order.order_date.isoformat(),
+                "review": order.review,
                 "amount_usd": amount_usd,
             }
         )

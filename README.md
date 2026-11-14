@@ -144,3 +144,122 @@ docker exec -it redis_storage redis-cli FLUSHALL
 ```failed = 4```
 
 **Summary:** Если ```order_id in local_seen_ids``` (уже был при текущем запуске), то кидаем его в ```errors``` с пометкой дубликат + в ```all_seen_ids``` его добавляем (тк это множество - все ок будет, даже если этот заказ уже добавлен). Если после этого ```order_id in all_seen_ids```, то мы skip, тк не считаем считаем дубликатом то, что обработали в прошлом запуске (и соответственно в текущем).
+
+
+___
+
+```processed_orders```:
+
+```JSON
+[
+  {
+    "order_id": 1,
+    "customer": "alex",
+    "product": "Война и мир",
+    "amount": 20.77,
+    "currency": "USD",
+    "order_date": "2026-10-18",
+    "review": "Плохое качество печати, страницы рваные, разочарован",
+    "amount_usd": 20.77
+  },
+  {
+    "order_id": 4,
+    "customer": "maria",
+    "product": "1984",
+    "amount": 11.75,
+    "currency": "EUR",
+    "order_date": "2024-09-25",
+    "review": "Обычная книга, ничего особенного",
+    "amount_usd": 13.15
+  },
+  {
+    "order_id": 5,
+    "customer": "elena",
+    "product": "Война и мир",
+    "amount": 11.75,
+    "currency": "EUR",
+    "order_date": "2026-10-05",
+    "review": "Обычная книга, ничего особенного",
+    "amount_usd": 13.14
+  }
+]
+```
+
+```GET /jobs/{job_id}/result```
+
+```JSON
+{
+  "job_id": "5033c5ee-85a1-4473-a86c-8765a837e1bc",
+  "status": "done",
+  "total": 7,
+  "processed": 3,
+  "failed": 4,
+  "summary": {
+    "customer_x_currency": [
+      {
+        "customer": "alex",
+        "currency": "USD",
+        "amount_usd": 20.77
+      },
+      {
+        "customer": "elena",
+        "currency": "EUR",
+        "amount_usd": 13.14
+      },
+      {
+        "customer": "maria",
+        "currency": "EUR",
+        "amount_usd": 13.15
+      }
+    ],
+    "top3_customers": [
+      {
+        "customer": "alex",
+        "amount_usd": 20.77
+      },
+      {
+        "customer": "maria",
+        "amount_usd": 13.15
+      },
+      {
+        "customer": "elena",
+        "amount_usd": 13.14
+      }
+    ],
+    "weekly_usd": [
+      {
+        "week": "2024-09-23/2024-09-29",
+        "amount_usd": 13.15
+      },
+      {
+        "week": "2026-10-05/2026-10-11",
+        "amount_usd": 13.14
+      },
+      {
+        "week": "2026-10-12/2026-10-18",
+        "amount_usd": 20.77
+      }
+    ],
+    "total_usd": 47.06,
+    "avg_check_usd": 15.69
+  },
+  "errors": [
+    {
+      "order_id": 2,
+      "reason": "unknown currency: XYZ"
+    },
+    {
+      "order_id": 1,
+      "reason": "duplicate order"
+    },
+    {
+      "order_id": 1,
+      "reason": "duplicate order"
+    },
+    {
+      "order_id": 3,
+      "reason": "Field required"
+    }
+  ]
+}
+```
