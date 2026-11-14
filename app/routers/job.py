@@ -1,7 +1,8 @@
-from fastapi import APIRouter, HTTPException, UploadFile, Response
+from fastapi import APIRouter, HTTPException, UploadFile, Response, Depends
 from app.storage import redis
 from app.tasks.processor import process_orders
 from app.schemas.job import JobCreated, JobResult, JobStatus
+from app.dependencies import verify_api_key
 
 from typing import Literal
 import asyncio
@@ -13,9 +14,9 @@ router = APIRouter(prefix="/jobs", tags=["jobs"])
 
 
 @router.post("", status_code=202, response_model=JobCreated)
-async def create_job(file: UploadFile):
+async def create_job(file: UploadFile, owner: str = Depends(verify_api_key)):
     job_id = str(uuid.uuid4())
-    await redis.create_job(job_id)
+    await redis.create_job(job_id, owner=owner)
     content = await file.read()
 
     # задача app.processor:process_orders с job_id, content -> в очередь TaskIQ (в Redis-брокер)
@@ -25,9 +26,9 @@ async def create_job(file: UploadFile):
 
 
 @router.get("/{job_id}", response_model=JobStatus)
-async def get_status(job_id: str):
+async def get_status(job_id: str, owner: str = Depends(verify_api_key)):
     job = await redis.get_job(job_id)
-    if job is None:
+    if job is None or job.get("owner") != owner:
         raise HTTPException(
             status_code=404,
             detail="job not found"
@@ -42,9 +43,9 @@ async def get_status(job_id: str):
 
 
 @router.get("/{job_id}/result")
-async def get_result(job_id: str, format: Literal["json", "csv"] = "json"):
+async def get_result(job_id: str, format: Literal["json", "csv"] = "json", owner: str = Depends(verify_api_key)):
     job = await redis.get_job(job_id)
-    if job is None:
+    if job is None or job.get("owner") != owner:
         raise HTTPException(
             status_code=404, 
             detail="job not found"

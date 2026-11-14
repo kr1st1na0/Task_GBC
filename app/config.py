@@ -7,3 +7,7 @@ if not REDIS_URL:
 BROKER_URL = os.getenv("BROKER_URL")
 if not BROKER_URL:
     raise RuntimeError("BROKER_URL is not set (.env file)")
+
+API_KEY = os.getenv("API_KEY")
+if not API_KEY:
+    raise RuntimeError("API_KEY is not set (.env file)")

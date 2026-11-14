@@ -10,7 +10,7 @@ _client = redis.Redis.from_url(REDIS_URL, decode_responses=True)
 def _key(job_id: str) -> str:
     return f"job:{job_id}"
 
-async def create_job(job_id: str) -> None:
+async def create_job(job_id: str, owner: str) -> None:
     await _client.hset(
         _key(job_id),
         mapping = {
@@ -18,6 +18,7 @@ async def create_job(job_id: str) -> None:
             "total": 0,
             "processed": 0,
             "failed": 0,
+            "owner": owner,
         },
     )
     await _client.set(f"{_key(job_id)}:result", json.dumps(None))
@@ -40,6 +41,7 @@ async def get_job(job_id: str) -> dict[str, Any] | None:
         "total": int(data.get("total", 0)),
         "processed": int(data.get("processed", 0)),
         "failed": int(data.get("failed", 0)),
+        'owner': data.get("owner"),
         "result": json.loads(result_raw) if result_raw else None,
         "processed_orders": json.loads(processed_orders_raw) if processed_orders_raw else [],
         "all_seen_ids": json.loads(all_seen_raw) if all_seen_raw else [],
