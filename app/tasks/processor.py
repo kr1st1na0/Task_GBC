@@ -70,7 +70,7 @@ async def process_orders(job_id: str, content: bytes) -> None:
             all_seen_ids.add(order_id)
             await _updater(job_id, processed, errors, processed_orders, all_seen_ids)
             continue
-        # дубликат retry запуск
+        # не считаем дубликатом то, что обработали в прошлом запуске
         if order_id in all_seen_ids: # из прошлого запуска (retry)
             local_seen_ids.add(order_id)
             continue
