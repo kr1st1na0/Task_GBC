@@ -31,6 +31,8 @@ app/
 data/
 |-- orders.json         # файл из задания
 |-- small_orders.json   # файл, на котором тестила битые заказы + дубликаты
+tests/
+|-- test_summary.py     # тест сборки сводки
 ```
 
 
